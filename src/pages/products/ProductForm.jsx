@@ -18,16 +18,22 @@ const useStyles = createUseStyles({
   },
 });
 
+const initialState = {
+  name: '',
+  price: '',
+  count: '',
+  image: 'phone',
+};
+
 const ProductForm = ({ onSubmit }) => {
   const classes = useStyles();
 
-  const [name, setName] = useState('');
-  const [price, setPrice] = useState('');
-  const [count, setCount] = useState('');
-  const [image, setImage] = useState('phone');
+  const [state, setState] = useState(initialState);
+  const { name, price, count, image } = state;
 
   const handleSubmit = e => {
     e.preventDefault();
+
     const newItem = {
       id: Date.now(),
       name,
@@ -36,16 +42,15 @@ const ProductForm = ({ onSubmit }) => {
       img: image,
     };
     onSubmit(newItem);
-    setName('');
-    setPrice('');
-    setCount('');
-    setImage('');
+    setState(initialState);
   };
 
-  const handleChangeName = e => setName(e.target.value);
-  const handleChangePrice = e => setPrice(e.target.value);
-  const handleChangeCount = e => setCount(e.target.value);
-  const handleChangeImage = e => setImage(e.target.value);
+  const handleChange = e => {
+    setState(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
 
   return (
     <form className={classes.productForm} on onSubmit={handleSubmit}>
@@ -56,27 +61,27 @@ const ProductForm = ({ onSubmit }) => {
           type="text"
           value={name}
           name="name"
-          onChange={handleChangeName}
+          onChange={handleChange}
         />
       </label>
       <label className={classes.label}>
         <span>Price:</span>
         <input
           className={classes.input}
-          type="text"
+          type="number"
           value={price}
           name="price"
-          onChange={handleChangePrice}
+          onChange={handleChange}
         />
       </label>
       <label className={classes.label}>
         <span>Count:</span>
         <input
           className={classes.input}
-          type="text"
+          type="number"
           value={count}
           name="count"
-          onChange={handleChangeCount}
+          onChange={handleChange}
         />
       </label>
       <label className={classes.label}>
@@ -85,7 +90,7 @@ const ProductForm = ({ onSubmit }) => {
           className={classes.input}
           value={image}
           name="image"
-          onChange={handleChangeImage}
+          onChange={handleChange}
         >
           <option value="phone">phone</option>
           <option value="laptop">laptop</option>
