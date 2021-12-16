@@ -2,6 +2,8 @@
 import { createUseStyles } from 'react-jss';
 import { useState, useEffect } from 'react';
 import Counterlist from './CounterList';
+import SingleCounter from './SingleCounter';
+
 
 const useStyles = createUseStyles({
   counter: {
@@ -74,8 +76,8 @@ const Counters = () => {
   const classes = useStyles();
   return (
     <div className={classes.counter}>
-      {/* <h2>Counters</h2> */}
-      <hr/>
+      <SingleCounter/>
+            <hr/>
       <button className={classes.button} onClick={addCounter}>+ Add counter</button>
       <Counterlist
         counters={counters}

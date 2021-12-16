@@ -8,6 +8,20 @@ const useStyles = createUseStyles({
   buttons: {
     display: 'flex',
   },
+  single: {
+    marginBottom: '10px'
+  },
+  step: {
+    marginRight: '5px'
+  },
+  button: {
+    width: '25px',
+    height: '25px'
+  },
+  value: {
+    marginRight: '5px',
+    marginLeft: '5px'
+  }
 });
 
 const limit = 500;
@@ -18,7 +32,8 @@ const SingleCounter = () => {
   const [step, setStep] = useState(1);
 
   const handleIncrement = () =>
-    setValue(prevState => (prevState + step > limit ? limit : prevState + step)); // проверка лимита, значение не должно быть больше 5
+    setValue(prevState => (prevState + step > limit ? limit : prevState + step)); 
+    // проверка лимита, значение не должно быть больше 5
   
   const handleDecrement = () =>
     setValue(prevState => (prevState - step < 0 ? 0 : prevState - step)); // проверка значения на меньше 0
@@ -31,10 +46,10 @@ const SingleCounter = () => {
   
   return (
     <div className={classes.counter}>
-      <h4>SingleCounter</h4>
+      <p>SingleCounter</p>
       <label>
-        <span>step</span>
-      <select value={step} onChange={handleChangeStep}> 
+        <span className={classes.step}>step</span>
+      <select className={classes.single} value={step} onChange={handleChangeStep}> 
         <option value="1">1</option>
         <option value="5">5</option>
         <option value="10">10</option>
@@ -43,9 +58,9 @@ const SingleCounter = () => {
         </select>
         </label>
       <div className={classes.buttons}>
-        <button onClick={handleDecrement}>-</button>
-        <p>{value}</p>
-        <button onClick={() => handleIncrement()}>+</button>
+        <button className={classes.button} onClick={handleDecrement}>-</button>
+        <span className={classes.value}>{value}</span>
+        <button className={classes.button} onClick={() => handleIncrement()}>+</button>
       </div>
     </div>
   );
