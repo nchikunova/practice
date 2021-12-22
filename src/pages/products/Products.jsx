@@ -1,8 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ProductList from './ProductList';
 import ProductForm from './ProductForm';
-
-
 
 const Products = () => {
   const [products, setProducts] = useState([
@@ -25,7 +23,16 @@ const Products = () => {
   const handleAddProduct = newItem => {
     setProducts(prev => [...prev, newItem]);
   };
- 
+
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem('products'));
+    setProducts(data);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('products', JSON.stringify(products));
+  }, [products]);
+
   return (
     <div className="products">
       {/* <button onClick={handleAddProduct}>+ add item</button> */}
