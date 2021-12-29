@@ -1,12 +1,12 @@
 import { createUseStyles } from 'react-jss';
-import phone from '../../assets/iphone.png';
+import phone from '../../assets/phone1';
 import laptop from '../../assets/laptop.png';
 // import { loadImage } from '../../utils/loadImage';
 import PropTypes from 'prop-types';
 
 const images = {
-  phone,
   laptop,
+  phone,
 };
 
 const ProductItem = ({ product }) => {
