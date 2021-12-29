@@ -16,7 +16,6 @@ li {
   margin-bottom: 10px;
 }
 
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -24,6 +23,6 @@ code {
 
 img {
   display: block;
-  width: 80px;
+  width: 200px;
   height: auto;
 }

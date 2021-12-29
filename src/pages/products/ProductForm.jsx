@@ -48,9 +48,11 @@ const ProductForm = ({ onSubmit }) => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    const hasEmptyField = Object.values(state).some(item => !item);
+    const requiredFields = [name, price, count, color];
+    const hasEmptyField = Object.values(requiredFields).some(item => !item);
+
     if (hasEmptyField) {
-      setError('All fields are required');
+      setError('Fields name, price, count and color are required');
       return;
     }
 

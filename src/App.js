@@ -1,10 +1,10 @@
 import './App.css';
 import Menu from './components/Menu';
-import Content from './components/Content'
+import Content from './components/Content';
 
 function App() {
   return (
-    <div>
+    <div className="body">
       <Menu />
       <Content />
     </div>

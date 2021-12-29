@@ -5,14 +5,14 @@ import ProductForm from './ProductForm';
 const Products = () => {
   const [products, setProducts] = useState([
     {
-      id: 1,
+      id: '1',
       name: 'phone1',
       price: 500,
       count: 10,
       img: 'phone',
     },
     {
-      id: 2,
+      id: '2',
       name: 'laptop1',
       price: 500,
       count: 10,
@@ -23,6 +23,9 @@ const Products = () => {
   const handleAddProduct = newItem => {
     setProducts(prev => [...prev, newItem]);
   };
+
+  const handleDeleteProduct = id =>
+    setProducts(prevState => prevState.filter(product => product.id !== id));
 
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem('products'));
@@ -35,9 +38,8 @@ const Products = () => {
 
   return (
     <div className="products">
-      {/* <button onClick={handleAddProduct}>+ add item</button> */}
       <ProductForm onSubmit={handleAddProduct} />
-      <ProductList products={products} />
+      <ProductList products={products} onDelete={handleDeleteProduct} />
     </div>
   );
 };
