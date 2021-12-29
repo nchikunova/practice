@@ -6,8 +6,8 @@ const useStyles = createUseStyles({
     verticalAlign: 'middle',
   },
   item: {
-    display: 'block'
-  }
+    display: 'block',
+  },
 });
 
 const Menu = () => {
@@ -17,7 +17,7 @@ const Menu = () => {
       <p>menu</p>
       <li>
         {routes.map(({ path, label }) => (
-          <a className={classes.item}  key={path} href={path}>
+          <a className={classes.item} key={path} href={path}>
             {label}
           </a>
         ))}
