@@ -41,6 +41,13 @@ const Modal = ({ onClose }) => {
     }
   };
 
+  // const handleBtnClick = e => {
+  //   if (e.target.tagName === 'BUTTON') {
+  //     console.log(e.target.tagName);
+  //     onClose();
+  //   }
+  // };
+
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
     return () => {
