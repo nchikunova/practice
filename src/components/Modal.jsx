@@ -41,6 +41,12 @@ const Modal = ({ onClose }) => {
     }
   };
 
+  const handleBtnClose = e => {
+    if (e.node === 'BUTTON') {
+      onClose();
+    }
+  };
+
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
     return () => {
@@ -52,7 +58,7 @@ const Modal = ({ onClose }) => {
   return (
     <div className={classes.backDrop} onClick={onClose}>
       <div className={classes.modal}>
-        <h3>My awesome Modal Window</h3>
+        <h3 onClick={onClose}>My awesome Modal Window</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
           perferendis inventore sapiente quam reiciendis asperiores doloribus
@@ -60,7 +66,11 @@ const Modal = ({ onClose }) => {
           doloremque, quas pariatur sed rerum impedit?
         </p>
 
-        <button type="button" onAuxClick={onClose} className={classes.modalBtn}>
+        <button
+          type="button"
+          onClick={handleBtnClose}
+          className={classes.modalBtn}
+        >
           Close
         </button>
       </div>
