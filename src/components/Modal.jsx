@@ -41,12 +41,12 @@ const Modal = ({ onClose }) => {
     }
   };
 
-  // const handleBtnClick = e => {
-  //   if (e.target.tagName === 'BUTTON') {
-  //     console.log(e.target.tagName);
-  //     onClose();
-  //   }
-  // };
+  const handleBtnClick = e => {
+    if (e.target.tagName === 'BUTTON') {
+      console.log(e.target.tagName);
+      onClose();
+    }
+  };
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
@@ -67,7 +67,11 @@ const Modal = ({ onClose }) => {
           doloremque, quas pariatur sed rerum impedit?
         </p>
 
-        <button type="button" onAuxClick={onClose} className={classes.modalBtn}>
+        <button
+          type="button"
+          onAuxClick={handleBtnClick} //Doesn't working with onClick func
+          className={classes.modalBtn}
+        >
           Close
         </button>
       </div>

@@ -24,6 +24,9 @@ const Products = () => {
     setProducts(prev => [...prev, newItem]);
   };
 
+  const handleDeleteProduct = id =>
+    setProducts(prevState => prevState.filter(product => product.id !== id));
+
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem('products'));
     setProducts(data);
@@ -36,7 +39,7 @@ const Products = () => {
   return (
     <div className="products">
       <ProductForm onSubmit={handleAddProduct} />
-      <ProductList products={products} />
+      <ProductList products={products} onDelete={handleDeleteProduct} />
     </div>
   );
 };
