@@ -4,7 +4,7 @@ import ErrorBoundary from './../../components/ErrorBoundary';
 const Counterlist = ({ counters, onIncrement, onDecrement, onDelete }) => (
   <ErrorBoundary>
     <ul className="counter-list">
-      {counters.map(counter => (
+      {counters?.map(counter => (
         <CounterItem
           key={counter.id}
           counter={counter}
