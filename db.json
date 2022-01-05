@@ -1,0 +1,51 @@
+{
+  "products": [
+    {
+      "id": "2",
+      "name": "laptop1",
+      "price": 500,
+      "count": 10,
+      "img": "laptop"
+    },
+    {
+      "id": 1641374679708,
+      "name": "Iphone PRO Max",
+      "price": 35000,
+      "count": 1,
+      "color": "white",
+      "warantie": false,
+      "software": false,
+      "img": "phone"
+    },
+    {
+      "name": "HP",
+      "price": 39499,
+      "count": 1,
+      "color": "black",
+      "warantie": true,
+      "software": true,
+      "img": "laptop",
+      "id": 1641374679709
+    },
+    {
+      "name": "asus",
+      "price": 45555,
+      "count": 11,
+      "color": "white",
+      "warantie": false,
+      "software": false,
+      "img": "laptop",
+      "id": 1641374679710
+    },
+    {
+      "name": "Acer",
+      "price": 9999,
+      "count": 1,
+      "color": "grey",
+      "warantie": true,
+      "software": false,
+      "img": "phone",
+      "id": 1641374679711
+    }
+  ]
+}

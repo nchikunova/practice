@@ -57,7 +57,7 @@ const ProductForm = ({ onSubmit }) => {
     }
 
     const newItem = {
-      id: Date.now(),
+      // id: Date.now(),
       name,
       price: Number(price),
       count: Number(count),
