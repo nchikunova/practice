@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react';
 import ProductList from './ProductList';
 import ProductForm from './ProductForm';
-import { getProducts, addProduct } from '../../api/products-api.jsx';
+import {
+  getProducts,
+  addProduct,
+  deleteProduct,
+} from '../../api/products-api.jsx';
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -10,14 +14,23 @@ const Products = () => {
 
   const handleAddProduct = newItem => {
     // setProducts(prev => [...prev, newItem]);
+
+    setIsLoading(true);
+
     addProduct(newItem)
-      .then(data => setProducts(prev => [...prev, newItem]))
+      .then(data => setProducts(prev => [...prev, data]))
       .catch(error => setError(error.message))
       .finally(() => setIsLoading(false));
   };
 
   const handleDeleteProduct = id =>
-    setProducts(prevState => prevState.filter(product => product.id !== id));
+    // setProducts(prevState => prevState.filter(product => product.id !== id));
+    deleteProduct(id)
+      .then(() =>
+        setProducts(prev => prev.filter(product => product.id !== id)),
+      )
+      .catch(error => setError(error.message))
+      .finally(() => setIsLoading(false));
 
   useEffect(() => {
     // const data = JSON.parse(localStorage.getItem('products'));

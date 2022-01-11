@@ -1,9 +1,14 @@
 import axios from 'axios';
 
+axios.defaults.baseURL = 'http://localhost:4040';
+
 export const getProducts = () =>
-  axios.get('http://localhost:4040/products').then(({ data }) => data);
+  axios.get('/products').then(({ data }) => data);
 
 export const addProduct = payload =>
-  axios
-    .post('http://localhost:4040/products', payload)
-    .then(({ data }) => data);
+  axios.post('/products', payload).then(({ data }) => data);
+
+export const deleteProduct = id =>
+  axios.delete(`/products/${id}`).then(({ data }) => data);
+
+export const getCart = () => axios.get('/products').then(({ data }) => data);
