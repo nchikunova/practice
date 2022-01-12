@@ -2,6 +2,7 @@ import { search } from '../api/movies-api';
 import { useEffect, useState, useCallback } from 'react';
 import _ from 'lodash';
 import { createUseStyles } from 'react-jss';
+import defaultImg from '../assets/error';
 
 const useStyles = createUseStyles({
   movies: {
@@ -50,7 +51,7 @@ export const MovieSearch = () => {
               src={
                 poster_path
                   ? `https://image.tmdb.org/t/p/w300${poster_path}`
-                  : 'oops, something went wrong'
+                  : defaultImg
               }
               alt=""
             />
