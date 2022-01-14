@@ -2,7 +2,7 @@ import { search } from '../api/movies-api';
 import { useEffect, useState, useCallback } from 'react';
 import _ from 'lodash';
 import { createUseStyles } from 'react-jss';
-import defaultImg from '../assets/error';
+import defaultImg from '../utils/loadImage/noImage.png';
 
 const useStyles = createUseStyles({
   movies: {
@@ -18,6 +18,12 @@ const useStyles = createUseStyles({
       marginRight: '15px',
     },
   },
+
+  posterImg: {
+    width: '100%',
+    heigth: 'auto',
+    display: 'block',
+  },
 });
 
 export const MovieSearch = () => {
@@ -27,6 +33,7 @@ export const MovieSearch = () => {
 
   const handleChange = e => setQuery(e.target.value);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const movieSearch = useCallback(
     _.debounce(
       query => search(query).then(({ results }) => setList(results)),
@@ -48,6 +55,7 @@ export const MovieSearch = () => {
           <li key={id} className={classes.item}>
             {original_title}
             <img
+              className={classes.posterImg}
               src={
                 poster_path
                   ? `https://image.tmdb.org/t/p/w300${poster_path}`
