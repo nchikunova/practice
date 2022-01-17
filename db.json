@@ -11,16 +11,6 @@
       "id": 3
     },
     {
-      "name": "Netbook Lenovo S100",
-      "price": 14500,
-      "count": 1,
-      "color": "grey",
-      "warantie": true,
-      "software": false,
-      "img": "laptop",
-      "id": 4
-    },
-    {
       "name": "Asus Zenfone",
       "price": 14500,
       "count": 10,
@@ -29,6 +19,16 @@
       "software": false,
       "img": "phone",
       "id": 5
+    },
+    {
+      "name": "Acer",
+      "price": 14999,
+      "count": 1,
+      "color": "black",
+      "warantie": true,
+      "software": true,
+      "img": "laptop",
+      "id": 6
     }
   ],
   "cart": [

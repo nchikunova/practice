@@ -23,6 +23,7 @@ const Counters = () => {
   const [counters, setCounters] = useState([]);
 
   // component did mount
+
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem('counters'));
     setCounters(data);
@@ -33,7 +34,6 @@ const Counters = () => {
   useEffect(() => {
     localStorage.setItem('counters', JSON.stringify(counters));
   }, [counters]);
-
   // component did update - always after render
 
   useEffect(() => {

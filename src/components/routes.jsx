@@ -1,29 +1,54 @@
-import Counters from '../pages/counters/index';
-import Products from '../pages/products/Products.jsx';
-import Timer from '../pages/LifeCycleTimer.jsx';
-import { MovieSearch } from './../pages/movieSearch';
+import { lazy } from 'react';
+// import HomePage from '../pages/HomePage';
+// import Counters from '../pages/counters/index';
+// import Products from '../pages/products/Products.jsx';
+// import Timer from '../pages/LifeCycleTimer.jsx';
+// import { MovieSearch } from './../pages/movieSearch';
+
+const HomePage = lazy(() =>
+  import('../pages/HomePage' /* webpackChunkName: "HomePage" */),
+);
+const Counters = lazy(() =>
+  import('../pages/counters/index' /* webpackChunkName: "Counters" */),
+);
+const Products = lazy(() =>
+  import('../pages/products/Products' /* webpackChunkName: "Products" */),
+);
+const Timer = lazy(() =>
+  import('../pages/LifeCycleTimer' /* webpackChunkName: "Timer" */),
+);
+
+const MovieSearch = lazy(() =>
+  import('./../pages/movieSearch' /* webpackChunkName: "MovieSearch" */),
+);
 
 export const routes = [
   {
+    path: '/',
+    label: 'HomePage',
+    element: HomePage,
+    exact: true,
+  },
+  {
     path: '/counters',
     label: 'Counters',
-    component: Counters,
+    element: Counters,
   },
   {
     path: '/products',
     label: 'Products',
-    component: Products,
+    element: Products,
   },
 
   {
     path: '/timer',
     label: 'Timer',
-    component: Timer,
+    element: Timer,
   },
 
   {
     path: '/movies',
     label: 'Movies',
-    component: MovieSearch,
+    element: MovieSearch,
   },
 ];

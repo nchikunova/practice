@@ -26,7 +26,7 @@ const useStyles = createUseStyles({
   },
 });
 
-export const MovieSearch = () => {
+const MovieSearch = () => {
   const classes = useStyles();
   const [query, setQuery] = useState('');
   const [list, setList] = useState([]);
@@ -70,3 +70,5 @@ export const MovieSearch = () => {
     </div>
   );
 };
+
+export default MovieSearch;

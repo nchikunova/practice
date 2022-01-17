@@ -10,6 +10,7 @@ body {
 }
 ul {
   list-style: none;
+  margin: 0;
 }
 
 li {
@@ -25,4 +26,14 @@ img {
   display: block;
   width: 200px;
   height: auto;
+}
+
+.body {
+  display: flex;
+}
+
+.content {
+  /* border: 1px solid black; */
+  display: flex;
+  flex: 1;
 }

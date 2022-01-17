@@ -5,16 +5,24 @@ const useStyles = createUseStyles({
   productForm: {
     display: 'flex',
     flexDirection: 'column',
-    width: '400px',
+    padding: '.5em',
+    width: '500px',
   },
 
   label: {
-    display: 'flex',
+    display: 'inline-flex',
+    padding: '.5em',
+    flex: 1,
+    // float: 'right',
+
+    '& > span': {},
   },
 
   input: {
-    flex: 1,
-    marginLeft: '10px',
+    display: 'inline-flex',
+    marginLeft: '1.5em',
+    textAlign: 'center',
+    flex: 2,
   },
 
   error: {
@@ -88,7 +96,8 @@ const ProductForm = ({ onSubmit }) => {
   return (
     <form className={classes.productForm} onSubmit={handleSubmit}>
       <label className={classes.label}>
-        <span>Name:</span>
+        <span> Name:</span>
+
         <input
           className={classes.input}
           type="text"
@@ -99,6 +108,7 @@ const ProductForm = ({ onSubmit }) => {
       </label>
       <label className={classes.label}>
         <span>Price:</span>
+
         <input
           className={classes.input}
           type="number"
@@ -108,7 +118,7 @@ const ProductForm = ({ onSubmit }) => {
         />
       </label>
       <label className={classes.label}>
-        <span>Count:</span>
+        <span> Count:</span>
         <input
           className={classes.input}
           type="number"
@@ -118,7 +128,7 @@ const ProductForm = ({ onSubmit }) => {
         />
       </label>
       <label className={classes.label}>
-        <span>Image:</span>
+        <span> Image:</span>
         <select
           className={classes.input}
           value={image}
