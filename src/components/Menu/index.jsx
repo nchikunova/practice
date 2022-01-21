@@ -27,8 +27,8 @@ const Menu = () => {
   return (
     <div className={classes.menu}>
       <p>menu</p>
-      {routes.map(({ path, exact, label }) => (
-        <NavLink className={classes.item} key={path} exact={exact} to={path}>
+      {routes.map(({ path, label }) => (
+        <NavLink className={classes.item} key={path} to={path}>
           {label}
         </NavLink>
       ))}

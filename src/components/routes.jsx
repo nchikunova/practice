@@ -19,7 +19,11 @@ const Timer = lazy(() =>
 );
 
 const MovieSearch = lazy(() =>
-  import('./../pages/movieSearch' /* webpackChunkName: "MovieSearch" */),
+  import('../pages/movies/movieSearch' /* webpackChunkName: "MovieSearch" */),
+);
+
+const MovieDetails = lazy(() =>
+  import('../pages/movies/movieDetails' /* webpackChunkName: "MovieDetails" */),
 );
 
 export const routes = [
@@ -27,7 +31,6 @@ export const routes = [
     path: '/',
     label: 'HomePage',
     element: HomePage,
-    exact: true,
   },
   {
     path: '/counters',
@@ -45,7 +48,10 @@ export const routes = [
     label: 'Timer',
     element: Timer,
   },
-
+  {
+    path: '/movies/:id',
+    element: MovieDetails,
+  },
   {
     path: '/movies',
     label: 'Movies',

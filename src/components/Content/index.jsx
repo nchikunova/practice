@@ -13,13 +13,8 @@ const Content = () => {
     <div className="content">
       <Suspense fallback={<p>Loading...</p>}>
         <Routes>
-          {routes.map(({ path, exact, element: Component }) => (
-            <Route
-              key={path}
-              path={path}
-              exact={exact}
-              element={<Component />}
-            ></Route>
+          {routes.map(({ path, element: Component }) => (
+            <Route key={path} path={path} element={<Component />}></Route>
           ))}
           <Route path="*" element={<Page404 />} />
           <Route path="*" element={<Navigate to="/" />} />
