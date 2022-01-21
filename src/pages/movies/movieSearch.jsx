@@ -32,15 +32,16 @@ const MovieSearch = () => {
   const classes = useStyles();
 
   const location = useLocation();
+  //console.log('location:', location);
   const { pathname, search } = location;
-  console.log(pathname, search);
-  const initialQueryState = queryString.parse(search); // parse(search)
+  //console.log(pathname, search);
+  const initialQueryState = queryString.parse(search); // ! parse(search)
 
   const navigate = useNavigate();
 
   const [query, setQuery] = useState(initialQueryState.query || '');
 
-  console.log('initialQueryState:', initialQueryState);
+  // console.log('initialQueryState:', initialQueryState);
 
   const [list, setList] = useState([]);
   const inputRef = useRef();

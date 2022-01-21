@@ -1,22 +1,10 @@
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const MovieDetails = () => {
   const navigate = useNavigate();
-  const location = useLocation();
-  const { state, query, search, hash } = location;
-  console.log(
-    'state:',
-    state,
-    'query:',
-    query,
-    'search:',
-    search,
-    'hash:',
-    hash,
-  );
 
   const handleGoBack = () => {
-    navigate(`/movies?query=${state?.query}`);
+    navigate(-1);
   };
 
   return (
