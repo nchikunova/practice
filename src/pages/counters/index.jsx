@@ -26,7 +26,9 @@ const Counters = () => {
 
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem('counters'));
-    setCounters(data);
+    if (data) {
+      setCounters(data);
+    }
   }, []);
 
   // component did update -  after data update
@@ -51,7 +53,7 @@ const Counters = () => {
 
   const handleIncrement = id =>
     setCounters(prevState =>
-      prevState.map(counter =>
+      prevState?.map(counter =>
         counter.id === id
           ? {
               ...counter,

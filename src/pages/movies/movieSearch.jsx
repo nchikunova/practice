@@ -96,8 +96,8 @@ const MovieSearch = () => {
                 }
                 alt=""
               />
-              <p>{overview}</p>
             </Link>
+            <p>{overview}</p>
           </li>
         ))}
       </ul>
