@@ -3,6 +3,7 @@ import { createUseStyles } from 'react-jss';
 import { useState, useEffect } from 'react';
 import Counterlist from './CounterList';
 import SingleCounter from './SingleCounter';
+import SingleCounterRedux from './SingleCounterRedux';
 
 const useStyles = createUseStyles({
   counter: {
@@ -82,6 +83,8 @@ const Counters = () => {
   return (
     <div className={classes.counter}>
       <SingleCounter />
+      <hr />
+      <SingleCounterRedux />
       <hr />
       <button className={classes.button} onClick={addCounter}>
         + Add counter
