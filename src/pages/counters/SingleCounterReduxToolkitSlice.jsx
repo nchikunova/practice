@@ -1,5 +1,7 @@
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
+import { connect } from 'react-redux';
+import * as actions from '../../redux/counterToolkitSlice/reducer';
 
 const useStyles = createUseStyles({
   counter: {
@@ -15,6 +17,9 @@ const useStyles = createUseStyles({
     marginRight: '5px',
   },
   button: {
+    '&:hover': {
+      backgroundColor: 'greenyellow',
+    },
     width: '25px',
     height: '25px',
   },
@@ -24,31 +29,21 @@ const useStyles = createUseStyles({
   },
 });
 
-const limit = 500;
-
-const SingleCounter = () => {
+const SingleCounterReduxToolkitSlice = ({
+  value,
+  step,
+  onChangeStep,
+  onDecrement,
+  onIncrement,
+}) => {
   const classes = useStyles();
-  const [value, setValue] = useState(0);
-  const [step, setStep] = useState(1);
-
-  const handleIncrement = () =>
-    setValue(prevState =>
-      prevState + step > limit ? limit : prevState + step,
-    );
-  // проверка лимита, значение не должно быть больше 5
-
-  const handleDecrement = () =>
-    setValue(prevState => (prevState - step < 0 ? 0 : prevState - step)); // проверка значения на меньше 0
-
-  const handleChangeStep = e => setStep(Number(e.target.value));
-
-  useEffect(() => {
-    console.log('value:', value);
-  }, [value]);
+  const handleChangeStep = e => onChangeStep(+e.target.value);
+  const handleDecrement = () => onDecrement(step);
+  const handleIncrement = () => onIncrement(step);
 
   return (
     <div className={classes.counter}>
-      <h3>Single Counter</h3>
+      <h4>Single Counter Redux Toolkit Slice</h4>
       <label>
         <span className={classes.step}>step</span>
         <select
@@ -76,4 +71,12 @@ const SingleCounter = () => {
   );
 };
 
-export default SingleCounter;
+const mapStateToProps = ({ counterToolkitSlice: { value, step } }) => ({
+  value,
+  step,
+});
+
+export default connect(
+  mapStateToProps,
+  actions,
+)(SingleCounterReduxToolkitSlice);

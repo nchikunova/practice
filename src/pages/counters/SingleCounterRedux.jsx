@@ -17,6 +17,9 @@ const useStyles = createUseStyles({
     marginRight: '5px',
   },
   button: {
+    '&:hover': {
+      backgroundColor: 'greenyellow',
+    },
     width: '25px',
     height: '25px',
   },
@@ -40,7 +43,7 @@ const SingleCounterRedux = ({
 
   return (
     <div className={classes.counter}>
-      <h3>Single Counter Redux</h3>
+      <h4>Single Counter Redux</h4>
       <label>
         <span className={classes.step}>step</span>
         <select

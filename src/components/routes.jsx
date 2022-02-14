@@ -1,9 +1,4 @@
 import { lazy } from 'react';
-// import HomePage from '../pages/HomePage';
-// import Counters from '../pages/counters/index';
-// import Products from '../pages/products/Products.jsx';
-// import Timer from '../pages/LifeCycleTimer.jsx';
-// import { MovieSearch } from './../pages/movieSearch';
 
 const HomePage = lazy(() =>
   import('../pages/HomePage' /* webpackChunkName: "HomePage" */),
@@ -28,6 +23,10 @@ const MovieDetails = lazy(() =>
 
 const Context = lazy(() =>
   import('../pages/context' /* webpackChunkName: "Context" */),
+);
+
+const Todos = lazy(() =>
+  import('../pages/todos' /* webpackChunkName: "Todos" */),
 );
 
 export const routes = [
@@ -62,5 +61,15 @@ export const routes = [
     element: MovieSearch,
   },
 
-  { path: '/context', label: 'Context', element: Context },
+  {
+    path: '/context',
+    label: 'Context',
+    element: Context,
+  },
+
+  {
+    path: '/todos',
+    label: 'Todos',
+    element: Todos,
+  },
 ];

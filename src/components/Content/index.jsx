@@ -1,12 +1,12 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Suspense } from 'react';
+import Page404 from './../../pages/Page404';
+import { routes } from '../routes';
 // import Products from '../../pages/products/Products';
 // import Counters from '../../pages/counters';
 // import HomePage from './../../pages/HomePage';
-import Page404 from './../../pages/Page404';
 // import Timer from '../../pages/LifeCycleTimer';
 // import { MovieSearch } from './../../pages/movieSearch';
-import { routes } from '../routes';
 
 const Content = () => {
   return (
