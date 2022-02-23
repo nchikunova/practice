@@ -15,12 +15,12 @@ const { actions, reducer } = createSlice({
     onIncrement: (state, action) => {
       state.value += action.payload;
     },
-    setStep: (state, action) => {
+    onSetStep: (state, action) => {
       state.step = action.payload;
     },
   },
 });
 
-export const { onDecrement, onIncrement, setStep } = actions;
+export const { onDecrement, onIncrement, onSetStep } = actions;
 
 export default reducer;

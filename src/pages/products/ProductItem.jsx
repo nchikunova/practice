@@ -38,7 +38,7 @@ const ProductItem = ({ product, onDelete }) => {
         <p>price: {product.price}</p>
         <p> count: {product.count}</p>
         <p> color: {product.color || '--'}</p>
-        <p> warantie: {product?.warantie?.toString() || '--'}</p>
+        <p> warranty: {product?.warranty?.toString() || '--'}</p>
         <p> software: {product?.software?.toString() || '--'}</p>
         <img src={images[product.img]} alt={product.name} />
       </div>

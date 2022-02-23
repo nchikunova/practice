@@ -1,4 +1,4 @@
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
@@ -15,9 +15,6 @@ const useStyles = createUseStyles({
     marginRight: '5px',
   },
   button: {
-    '&:hover': {
-      backgroundColor: 'greenyellow',
-    },
     width: '25px',
     height: '25px',
   },
@@ -27,21 +24,31 @@ const useStyles = createUseStyles({
   },
 });
 
-const SingleCounter = ({
-  value,
-  step,
-  onSetStep,
-  onDecrement,
-  onIncrement,
-}) => {
+const limit = 500;
+
+const SingleCounter = () => {
   const classes = useStyles();
-  const handleChangeStep = e => onSetStep(+e.target.value);
-  const handleDecrement = () => onDecrement(step);
-  const handleIncrement = () => onIncrement(step);
+  const [value, setValue] = useState(0);
+  const [step, setStep] = useState(1);
+
+  const handleIncrement = () =>
+    setValue(prevState =>
+      prevState + step > limit ? limit : prevState + step,
+    );
+  // проверка лимита, значение не должно быть больше 5
+
+  const handleDecrement = () =>
+    setValue(prevState => (prevState - step < 0 ? 0 : prevState - step)); // проверка значения на меньше 0
+
+  const handleChangeStep = e => setStep(Number(e.target.value));
+
+  useEffect(() => {
+    console.log('value:', value);
+  }, [value]);
 
   return (
     <div className={classes.counter}>
-      <h4>Single Counter</h4>
+      <h3>Single Counter with own state</h3>
       <label>
         <span className={classes.step}>step</span>
         <select

@@ -1,6 +1,6 @@
 import ProductItem from './ProductItem';
 
-const Productlist = ({ products, onDelete }) => {
+const ProductsList = ({ products, onDelete }) => {
   return (
     <ul>
       {products?.map(product =>
@@ -12,4 +12,4 @@ const Productlist = ({ products, onDelete }) => {
   );
 };
 
-export default Productlist;
+export default ProductsList;

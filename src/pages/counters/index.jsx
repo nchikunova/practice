@@ -1,8 +1,6 @@
-// import SingleCounter from './SingleCounter';
 import { createUseStyles } from 'react-jss';
 import { useState, useEffect } from 'react';
 import Counterlist from './CounterList';
-import SingleCounter from './SingleCounter';
 import SingleCounterRedux from './SingleCounterRedux';
 import SingleCounterReduxToolkit from './SingleCounterReduxToolkit';
 import SingleCounterReduxToolkitSlice from './SingleCounterReduxToolkitSlice';
@@ -84,8 +82,6 @@ const Counters = () => {
   const classes = useStyles();
   return (
     <div className={classes.counter}>
-      <SingleCounter />
-      <hr />
       <SingleCounterRedux />
       <hr />
       <SingleCounterReduxToolkit />

@@ -1,5 +1,5 @@
 import { combineReducers, createReducer } from '@reduxjs/toolkit';
-import { onDecrement, onIncrement, onChangeStep } from './actions';
+import { onDecrement, onIncrement, onSetStep } from './actions';
 
 const initialState = {
   value: 65,
@@ -12,7 +12,7 @@ const value = createReducer(initialState.value, {
 });
 
 const step = createReducer(initialState.step, {
-  [onChangeStep]: (_, action) => action.payload,
+  [onSetStep]: (_, action) => action.payload,
 });
 
 export default combineReducers({ value, step });

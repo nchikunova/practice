@@ -40,7 +40,7 @@ const initialState = {
   price: '',
   count: '',
   color: 'white',
-  warantie: false,
+  warranty: false,
   software: false,
   image: 'phone',
 };
@@ -51,7 +51,7 @@ const ProductForm = ({ onSubmit }) => {
   const [state, setState] = useState(initialState);
   const [error, setError] = useState('');
 
-  const { name, price, count, color, warantie, software, image } = state;
+  const { name, price, count, color, warranty, software, image } = state;
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -70,7 +70,7 @@ const ProductForm = ({ onSubmit }) => {
       price: Number(price),
       count: Number(count),
       color,
-      warantie,
+      warranty,
       software,
       img: image,
     };
@@ -173,13 +173,13 @@ const ProductForm = ({ onSubmit }) => {
         </label>
       </fieldset>
       <fieldset className={classes.fieldset}>
-        <legend>Warantie:</legend>
+        <legend>Warranty:</legend>
         <label>
-          <span>Advanced warantie (12M)</span>
+          <span>Advanced warranty (12M)</span>
           <input
             type="checkbox"
-            checked={warantie}
-            name="warantie"
+            checked={warranty}
+            name="warranty"
             onChange={handleCheckboxChange}
           />
         </label>
