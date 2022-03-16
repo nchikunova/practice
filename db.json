@@ -60,12 +60,6 @@
       "created": 1645180903490,
       "isDone": true,
       "id": 3
-    },
-    {
-      "text": "disabled = isLoading",
-      "created": 1645181457987,
-      "isDone": false,
-      "id": 4
     }
   ]
 }
