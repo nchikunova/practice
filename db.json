@@ -29,6 +29,16 @@
       "software": true,
       "img": "laptop",
       "id": 6
+    },
+    {
+      "name": "Lenovo",
+      "price": 25999,
+      "count": 1,
+      "color": "grey",
+      "warranty": true,
+      "software": true,
+      "img": "laptop",
+      "id": 7
     }
   ],
   "cart": [
@@ -36,6 +46,20 @@
       "id": 4,
       "productId": 3,
       "count": 1
+    }
+  ],
+  "todos": [
+    {
+      "text": "one more todo",
+      "created": 1645018232866,
+      "isDone": false,
+      "id": 2
+    },
+    {
+      "text": "Learn React Redux",
+      "created": 1645180903490,
+      "isDone": true,
+      "id": 3
     }
   ]
 }

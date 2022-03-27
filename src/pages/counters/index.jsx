@@ -1,8 +1,9 @@
-// import SingleCounter from './SingleCounter';
 import { createUseStyles } from 'react-jss';
 import { useState, useEffect } from 'react';
 import Counterlist from './CounterList';
-import SingleCounter from './SingleCounter';
+import SingleCounterRedux from './SingleCounterRedux';
+import SingleCounterReduxToolkit from './SingleCounterReduxToolkit';
+import SingleCounterReduxToolkitSlice from './SingleCounterReduxToolkitSlice';
 
 const useStyles = createUseStyles({
   counter: {
@@ -81,7 +82,11 @@ const Counters = () => {
   const classes = useStyles();
   return (
     <div className={classes.counter}>
-      <SingleCounter />
+      <SingleCounterRedux />
+      <hr />
+      <SingleCounterReduxToolkit />
+      <hr />
+      <SingleCounterReduxToolkitSlice />
       <hr />
       <button className={classes.button} onClick={addCounter}>
         + Add counter

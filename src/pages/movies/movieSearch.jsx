@@ -23,7 +23,7 @@ const useStyles = createUseStyles({
 
   posterImg: {
     width: '100%',
-    heigth: 'auto',
+    height: 'auto',
     display: 'block',
   },
 });
