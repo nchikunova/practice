@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { addTodo } from './../../redux/todos/actions';
 import { addTodos } from '../../redux/todos/operations';
 import { getIsLoading } from '../../redux/todos/selectors';
 
